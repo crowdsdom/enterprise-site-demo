@@ -272,3 +272,22 @@ li.active[role="presentation"] a{
 a[role="tab"] img{
     height: 80px;
 }
+.serviceItem {
+    margin-top: 20px;
+}
+.serviceItem .serviceTitle {
+    padding: 5px 10px;
+    background-color: #3e4459;
+    color: #f5f5f5;
+    border-radius: 5px;
+    clear: both;
+}
+.serviceItem .serviceContent {
+    font-weight: 100;
+    margin: 10px 0;
+}
+#book-button {
+    background-color: #36bbd9;
+    color: #fff;
+    padding: 10px 70px;
+}
