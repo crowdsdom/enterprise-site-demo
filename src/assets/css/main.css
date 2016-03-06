@@ -235,3 +235,40 @@ footer dl dt{
 p.copyright {
     margin: 15px 0 0;
 }
+
+
+/*==============================*/
+.service-header {
+    background: url(../images/service/serviceBg.png) no-repeat center center;
+    height: 248px;
+}
+.service-header h1 {
+    color: #fff;
+    margin-top: 120px;
+    text-align: center;
+}
+
+#serviceArea {
+    background-color: #ebf7fa;
+    padding: 30px 0;
+}
+#serviceDetailArea {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 30px;
+}
+a[role="tab"] {
+    border-radius: 15px;
+    border: 1px solid rgb(204, 204, 204);
+    color: #000;
+    outline: none;
+    text-align: center;
+}
+li.active[role="presentation"] a{
+    background-color: #36bbd9;
+    color: #fff;
+}
+a[role="tab"] img{
+    height: 80px;
+}
