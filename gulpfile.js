@@ -16,6 +16,8 @@ var htmlreplace = require('gulp-html-replace');
 
 var path = {
   HTML: './src/**/*.html',
+  CSS: './src/assets/css/*.css',
+  JS: './src/assets/js/*.js',
   MINIFIED_OUT: 'build.min.js',
   OUT: 'build.js',
   DEST: 'dist',
@@ -29,10 +31,14 @@ gulp.task('bower', function() {
 });
 
 gulp.task('asset:copy', function(){
-  copy.dirSync('./bower_components/bootstrap/dist/css', './src/assets/css/bootstrap/css');
-  copy.dirSync('./bower_components/bootstrap/dist/fonts', './src/assets/css/bootstrap/fonts');
-  copy.dirSync('./bower_components/bootstrap/dist/js', './src/assets/js/bootstrap');
-  copy('./bower_components/jquery/dist/jquery.min.js', './src/assets/js');
+  copy.dirSync('./bower_components/bootstrap/dist/css', './src/assets/css/vendor/bootstrap/css');
+  copy.dirSync('./bower_components/bootstrap/dist/fonts', './src/assets/css/vendor/bootstrap/fonts');
+  copy.dirSync('./bower_components/bootstrap/dist/js', './src/assets/js/vendor/bootstrap');
+  copy.dirSync('./bower_components/font-awesome/css', './src/assets/css/vendor/font-awesome/css');
+  copy.dirSync('./bower_components/font-awesome/fonts', './src/assets/css/vendor/font-awesome/fonts');
+  copy('./bower_components/jquery/dist/jquery.min.js', './src/assets/js/vendor/jquery');
+  copy('./bower_components/html5shiv/dist/*.min.js', './src/assets/js/vendor/html5shiv');
+  copy('./bower_components/respond/dest/*.min.js', './src/assets/js/vendor/respond');
 });
 
 gulp.task('asset:install', ['bower', 'asset:copy']);
@@ -46,5 +52,7 @@ gulp.task('server', function() {
 })
 
 gulp.task('serve', ['server'], function() {
-  return gulp.watch([ path.HTML ], [ browserSync.reload ]);
+  return gulp.watch([ path.HTML, path.CSS, path.JS ], [ browserSync.reload ]);
 })
+
+gulp.task('default', ['serve']);
