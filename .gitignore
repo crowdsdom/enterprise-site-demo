@@ -2,7 +2,7 @@
 # Created by https://www.gitignore.io/api/bower,node
 
 ### Bower ###
-bower_components
+/bower_components
 .bower-cache
 .bower-registry
 .bower-tmp
@@ -44,3 +44,4 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+dist

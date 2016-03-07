@@ -55,4 +55,8 @@ gulp.task('serve', ['server'], function() {
   return gulp.watch([ path.HTML, path.CSS, path.JS ], [ browserSync.reload ]);
 })
 
+gulp.task('build', function() {
+  gulp.src(['./src/**/*']).pipe(gulp.dest(path.DEST));
+});
+
 gulp.task('default', ['serve']);
